@@ -66,3 +66,6 @@ After "test_attack_performance.py" saves a .csv file to `saved_model/resnet_CIFA
 ```bash
 python process_results.py -dataset CIFAR10 -backbone resnet -model_num 1
 ```
+
+## Installment
+All provided models, the exploitable weight set, and the corresponding trigger file are available at https://doi.org/10.5281/zenodo.15609595.
