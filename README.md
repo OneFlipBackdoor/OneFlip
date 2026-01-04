@@ -12,16 +12,21 @@ pip install -r requirements.txt
 
 ```
 .
-├── augment/
-│   └── randaugment.py             # RandAugment image augmentation implementation
-├── model_template/
-│   └── preactres.py               # Pre-activation ResNet
 ├── bash/
-│   └── *.sh                       # Training bash scripts for different datasets/models
-├── saved_model/                   # Directory to store trained and backdoored models
-├── train_clean_model.py           # Clean training with various models
-├── inject_backdoor.py             # Backdoor injection via bit-level weight manipulation
-└── test_attack_performance.py     # Evaluate attack success rate and model robustness
+│   ├── test_performance.sh              # Evaluate classifier performance (ACC / ASR)
+│   ├── train_classifier_without_aug.sh  # Victim user trains classifier without data augmentation
+│   └── generate.sh                      # Victim user generates synthetic data
+├── dataset_split/
+│   └── backdoor_indices/
+│       ├── indice_0.npy
+│       └── poison_indices_class0_rate0.3_exp0.npy
+├── model_template/                      # resnet tailored for 32*32 resolution
+├── README.md
+├── generate.py                          # Synthetic data generation pipeline
+├── test_performance.py                 # Classifier performance and attack evaluation
+├── train_classifier_without_aug.py     # Victim-side classifier training (no augmentation)
+└── utils.py                             # Shared utility functions
+
 ```
 
 ##  Training Benign Models
